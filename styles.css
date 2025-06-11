@@ -31,7 +31,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-left: 2rem;
+    padding-left: 0;
 }
 
 .logo a {
@@ -83,6 +83,7 @@ body {
     gap: 3rem;
     margin: 0;
     padding: 0;
+    padding-left: 2rem;
 }
 
 .secondary-menu li {
