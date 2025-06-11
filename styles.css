@@ -121,7 +121,8 @@ body {
 }
 
 .secondary-menu > li:first-child > a::after {
-    display: none;
+    display: none !important;
+    content: none !important;
 }
 
 .secondary-menu a:hover {
@@ -142,8 +143,9 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
+    right: 0;
     background-color: #444;
-    min-width: 200px;
+    width: 100vw;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     padding: 0.5rem 0;
     z-index: 1000;
@@ -155,15 +157,14 @@ body {
 
 .dropdown-menu li {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .dropdown-menu a {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0;
     color: white !important;
-}
-
-.dropdown-menu a::after {
-    display: none;
 }
 
 .dropdown-menu a:hover {
@@ -255,6 +256,10 @@ body {
         box-shadow: none;
         padding-left: 1rem;
         display: none;
+    }
+
+    .dropdown-menu li {
+        padding: 0;
     }
 
     .secondary-menu li:hover .dropdown-menu {
