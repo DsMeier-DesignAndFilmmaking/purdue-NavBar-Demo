@@ -142,12 +142,12 @@ body {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #444;
     width: 100vw;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     z-index: 1000;
 }
 
@@ -165,6 +165,7 @@ body {
 .dropdown-menu a {
     padding: 0.5rem 0;
     color: white !important;
+    font-size: 1.1rem;
 }
 
 .dropdown-menu a:hover {
@@ -253,6 +254,8 @@ body {
     .dropdown-menu {
         position: static;
         width: 100%;
+        transform: none;
+        left: 0;
         box-shadow: none;
         padding-left: 1rem;
         display: none;
