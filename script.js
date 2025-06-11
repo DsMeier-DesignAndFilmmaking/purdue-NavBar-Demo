@@ -1,36 +1,59 @@
 // Global Navbar
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const globalHamburger = document.querySelector('.global-nav .hamburger');
+const globalNavMenu = document.querySelector('.global-nav .nav-menu');
 const overlay = document.querySelector('.menu-overlay');
 
-// Toggle menu
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+// Secondary Navbar
+const secondaryHamburger = document.querySelector('.secondary-nav .hamburger');
+const secondaryNavMenu = document.querySelector('.secondary-nav .nav-menu');
+
+// Toggle global menu
+globalHamburger.addEventListener('click', () => {
+    globalHamburger.classList.toggle('active');
+    globalNavMenu.classList.toggle('active');
     overlay.classList.toggle('active');
+    // Close secondary menu if open
+    secondaryHamburger.classList.remove('active');
+    secondaryNavMenu.classList.remove('active');
 });
 
-// Close menu when clicking overlay
+// Toggle secondary menu
+secondaryHamburger.addEventListener('click', () => {
+    secondaryHamburger.classList.toggle('active');
+    secondaryNavMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    // Close global menu if open
+    globalHamburger.classList.remove('active');
+    globalNavMenu.classList.remove('active');
+});
+
+// Close menus when clicking overlay
 overlay.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    globalHamburger.classList.remove('active');
+    globalNavMenu.classList.remove('active');
+    secondaryHamburger.classList.remove('active');
+    secondaryNavMenu.classList.remove('active');
     overlay.classList.remove('active');
 });
 
-// Close menu when clicking a link
+// Close menus when clicking links
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        globalHamburger.classList.remove('active');
+        globalNavMenu.classList.remove('active');
+        secondaryHamburger.classList.remove('active');
+        secondaryNavMenu.classList.remove('active');
         overlay.classList.remove('active');
     });
 });
 
-// Close menu when pressing Escape key
+// Close menus when pressing Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        globalHamburger.classList.remove('active');
+        globalNavMenu.classList.remove('active');
+        secondaryHamburger.classList.remove('active');
+        secondaryNavMenu.classList.remove('active');
         overlay.classList.remove('active');
     }
 }); 

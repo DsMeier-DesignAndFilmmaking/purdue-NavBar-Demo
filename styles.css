@@ -9,12 +9,21 @@ body {
 }
 
 .navbar {
-    background-color: #333;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+}
+
+.global-nav {
+    background-color: #333;
+    z-index: 1002;
+}
+
+.secondary-nav {
+    background-color: #444;
+    z-index: 1001;
 }
 
 .logo a {
@@ -30,11 +39,18 @@ body {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #333;
     width: 200px;
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 1000;
+}
+
+.global-nav .nav-menu {
+    background-color: #333;
+}
+
+.secondary-nav .nav-menu {
+    background-color: #444;
 }
 
 .nav-menu.active {
@@ -49,8 +65,12 @@ body {
     padding: 0.5rem 2rem;
 }
 
-.nav-menu a:hover {
+.global-nav .nav-menu a:hover {
     background-color: #444;
+}
+
+.secondary-nav .nav-menu a:hover {
+    background-color: #555;
 }
 
 .hamburger {
@@ -103,7 +123,6 @@ body {
         top: 70px;
         gap: 0;
         flex-direction: column;
-        background-color: #333;
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -116,5 +135,9 @@ body {
 
     .nav-menu li {
         margin: 1rem 0;
+    }
+
+    .secondary-nav .nav-menu {
+        top: 140px; /* Adjust for the height of the first navbar */
     }
 } 
