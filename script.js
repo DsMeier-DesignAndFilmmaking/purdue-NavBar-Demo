@@ -73,14 +73,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Secondary Navbar Dropdown Functionality
     const menuItems = document.querySelectorAll('.secondary-menu > li');
+    const dropdowns = document.querySelectorAll('.dropdown-menu');
     
     menuItems.forEach(item => {
         const link = item.querySelector('a');
-        const dropdown = item.querySelector('.dropdown-menu');
+        const dropdownId = link.textContent.toLowerCase() + '-dropdown';
+        const dropdown = document.getElementById(dropdownId);
         
         if (dropdown) {
             // Desktop hover functionality
             item.addEventListener('mouseenter', () => {
+                dropdowns.forEach(d => d.style.display = 'none');
                 dropdown.style.display = 'block';
             });
             
@@ -95,11 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     const isActive = item.classList.contains('active');
                     
                     // Close all dropdowns and remove active classes
-                    menuItems.forEach(i => {
-                        i.classList.remove('active');
-                        const d = i.querySelector('.dropdown-menu');
-                        if (d) d.style.display = 'none';
-                    });
+                    dropdowns.forEach(d => d.style.display = 'none');
+                    menuItems.forEach(i => i.classList.remove('active'));
                     
                     // Toggle current dropdown
                     if (!isActive) {
@@ -114,11 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.secondary-menu > li')) {
-            menuItems.forEach(item => {
-                item.classList.remove('active');
-                const dropdown = item.querySelector('.dropdown-menu');
-                if (dropdown) dropdown.style.display = 'none';
-            });
+            dropdowns.forEach(d => d.style.display = 'none');
+            menuItems.forEach(i => i.classList.remove('active'));
         }
     });
 }); 

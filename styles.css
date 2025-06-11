@@ -25,12 +25,14 @@ body {
     background-color: #444;
     z-index: 1001;
     padding: 0.5rem 0;
+    position: relative;
 }
 
 .secondary-nav-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
+    position: relative;
 }
 
 .logo a {
@@ -141,18 +143,14 @@ body {
 /* Dropdown Menu Styles */
 .dropdown-menu {
     display: none;
-    position: fixed;
-    top: calc(100% + 0.5rem);
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100vw;
     background-color: #444;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     padding: 1rem 0;
     z-index: 1000;
-}
-
-.secondary-menu li:hover .dropdown-menu {
-    display: block;
 }
 
 .dropdown-content {
@@ -323,13 +321,5 @@ body {
 
     .dropdown-section ul li {
         margin-bottom: 0.25rem;
-    }
-
-    .secondary-menu li:hover .dropdown-menu {
-        display: none;
-    }
-
-    .secondary-menu li.active .dropdown-menu {
-        display: block;
     }
 } 
