@@ -27,6 +27,10 @@ body {
     padding: 0.5rem 2rem;
 }
 
+.secondary-nav-container {
+    width: 100%;
+}
+
 .logo a {
     color: white;
     text-decoration: none;
@@ -80,6 +84,8 @@ body {
 
 .secondary-menu li {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .secondary-menu a {
@@ -89,6 +95,7 @@ body {
     padding: 0.5rem 0;
     transition: color 0.3s ease;
     white-space: nowrap;
+    display: block;
 }
 
 .secondary-menu a:hover {
