@@ -104,7 +104,7 @@ body {
 }
 
 /* Dropdown Arrow Styles */
-.secondary-menu li > a::after {
+.secondary-menu > li:not(:first-child) > a::after {
     content: '';
     display: inline-block;
     width: 0;
@@ -116,7 +116,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.secondary-menu li:hover > a::after {
+.secondary-menu > li:not(:first-child):hover > a::after {
     transform: rotate(180deg);
 }
 
