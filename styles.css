@@ -24,6 +24,7 @@ body {
 .secondary-nav {
     background-color: #444;
     z-index: 1001;
+    padding: 0.5rem 2rem;
 }
 
 .logo a {
@@ -49,10 +50,6 @@ body {
     background-color: #333;
 }
 
-.secondary-nav .nav-menu {
-    background-color: #444;
-}
-
 .nav-menu.active {
     display: block;
 }
@@ -69,8 +66,25 @@ body {
     background-color: #444;
 }
 
-.secondary-nav .nav-menu a:hover {
-    background-color: #555;
+/* Secondary Menu Styles */
+.secondary-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.secondary-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.secondary-menu a:hover {
+    color: #ddd;
 }
 
 .hamburger {
@@ -137,7 +151,13 @@ body {
         margin: 1rem 0;
     }
 
-    .secondary-nav .nav-menu {
-        top: 140px; /* Adjust for the height of the first navbar */
+    .secondary-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .secondary-menu a {
+        display: block;
+        padding: 0.5rem 0;
     }
 } 
