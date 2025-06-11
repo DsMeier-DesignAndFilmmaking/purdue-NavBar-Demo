@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Handle secondary menu dropdowns on mobile
-    const secondaryMenuItems = document.querySelectorAll('.secondary-menu > li');
+    const secondaryMenuItems = document.querySelectorAll('.secondary-menu > li:not(:first-child)');
     
     secondaryMenuItems.forEach(item => {
         const link = item.querySelector('a');
