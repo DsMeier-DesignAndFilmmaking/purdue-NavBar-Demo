@@ -29,6 +29,8 @@ body {
 
 .secondary-nav-container {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo a {
@@ -89,7 +91,7 @@ body {
 }
 
 .secondary-menu a {
-    color: white;
+    color: white !important;
     text-decoration: none;
     font-size: 1rem;
     padding: 0.5rem 0;
@@ -99,7 +101,15 @@ body {
 }
 
 .secondary-menu a:hover {
-    color: #ddd;
+    color: #ddd !important;
+}
+
+.secondary-menu a:visited {
+    color: white !important;
+}
+
+.secondary-menu a:active {
+    color: white !important;
 }
 
 .hamburger {
