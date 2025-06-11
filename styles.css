@@ -120,6 +120,10 @@ body {
     transform: rotate(180deg);
 }
 
+.secondary-menu > li:first-child > a::after {
+    display: none;
+}
+
 .secondary-menu a:hover {
     color: #ddd !important;
 }
