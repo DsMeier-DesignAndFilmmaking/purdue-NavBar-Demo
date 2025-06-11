@@ -11,13 +11,13 @@ A simple, responsive navigation bar with a hamburger menu for mobile devices.
 
 ## Live Demo
 
-[View the live demo](https://YOUR_USERNAME.github.io/Navbar-Demo)
+[View the live demo](https://dsmeier-designandfilmmaking.github.io/purdue-NavBar-Demo)
 
 ## Setup
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/Navbar-Demo.git
+git clone https://github.com/DsMeier-DesignAndFilmmaking/purdue-NavBar-Demo.git
 ```
 
 2. Open `index.html` in your web browser
