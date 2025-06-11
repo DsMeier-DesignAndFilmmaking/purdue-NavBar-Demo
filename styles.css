@@ -31,7 +31,7 @@ body {
 .secondary-nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0;
     position: relative;
 }
 
@@ -84,7 +84,6 @@ body {
     gap: 3rem;
     margin: 0;
     padding: 0;
-    padding-left: 2rem;
 }
 
 .secondary-menu li {
@@ -245,6 +244,10 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
     .nav-menu {
         display: none;
         position: fixed;
@@ -290,7 +293,7 @@ body {
         flex-direction: column;
         gap: 0.5rem;
         align-items: flex-start;
-        padding-left: 1rem;
+        padding-left: 0;
     }
 
     .secondary-menu a {
