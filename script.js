@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menuOverlay.classList.remove('active');
     });
 
-    // Handle secondary menu dropdowns on mobile
+    // Handle secondary menu dropdowns
     const secondaryMenuItems = document.querySelectorAll('.secondary-menu > li:not(:first-child)');
     
     secondaryMenuItems.forEach(item => {
@@ -62,44 +62,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const dropdown = item.querySelector('.dropdown-menu');
         
         if (dropdown) {
-            link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    item.classList.toggle('active');
-                }
-            });
-        }
-    });
-
-    // Secondary Navbar Dropdown Functionality
-    const menuItems = document.querySelectorAll('.secondary-menu > li');
-    const dropdowns = document.querySelectorAll('.dropdown-menu');
-    
-    menuItems.forEach(item => {
-        const link = item.querySelector('a');
-        const dropdownId = link.textContent.toLowerCase() + '-dropdown';
-        const dropdown = document.getElementById(dropdownId);
-        
-        if (dropdown) {
-            // Desktop hover functionality
-            item.addEventListener('mouseenter', () => {
-                dropdowns.forEach(d => d.style.display = 'none');
-                dropdown.style.display = 'block';
-            });
-            
-            item.addEventListener('mouseleave', () => {
-                dropdown.style.display = 'none';
-            });
-            
             // Mobile click functionality
-            link.addEventListener('click', (e) => {
+            link.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
                     const isActive = item.classList.contains('active');
                     
                     // Close all dropdowns and remove active classes
-                    dropdowns.forEach(d => d.style.display = 'none');
-                    menuItems.forEach(i => i.classList.remove('active'));
+                    secondaryMenuItems.forEach(i => {
+                        i.classList.remove('active');
+                        const d = i.querySelector('.dropdown-menu');
+                        if (d) d.style.display = 'none';
+                    });
                     
                     // Toggle current dropdown
                     if (!isActive) {
@@ -114,8 +88,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.secondary-menu > li')) {
-            dropdowns.forEach(d => d.style.display = 'none');
-            menuItems.forEach(i => i.classList.remove('active'));
+            secondaryMenuItems.forEach(item => {
+                item.classList.remove('active');
+                const dropdown = item.querySelector('.dropdown-menu');
+                if (dropdown) dropdown.style.display = 'none';
+            });
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            secondaryMenuItems.forEach(item => {
+                item.classList.remove('active');
+                const dropdown = item.querySelector('.dropdown-menu');
+                if (dropdown) dropdown.style.display = '';
+            });
         }
     });
 }); 
