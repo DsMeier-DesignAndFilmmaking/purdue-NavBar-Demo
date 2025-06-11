@@ -33,4 +33,41 @@ document.addEventListener('keydown', (e) => {
         globalNavMenu.classList.remove('active');
         overlay.classList.remove('active');
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    // Toggle main menu
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+    });
+
+    // Close menu when clicking overlay
+    menuOverlay.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    });
+
+    // Handle secondary menu dropdowns on mobile
+    const secondaryMenuItems = document.querySelectorAll('.secondary-menu > li');
+    
+    secondaryMenuItems.forEach(item => {
+        const link = item.querySelector('a');
+        const dropdown = item.querySelector('.dropdown-menu');
+        
+        if (dropdown) {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    item.classList.toggle('active');
+                }
+            });
+        }
+    });
 }); 
