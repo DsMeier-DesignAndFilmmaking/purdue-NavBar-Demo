@@ -153,16 +153,30 @@ body {
     top: 128px; /* Height of both navbars combined (64px + 64px) */
     left: 0;
     width: 100vw;
-    background-color: #444;
+    background-color: #ededed;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     padding: 1rem 0;
     z-index: 1000;
     border-radius: 0;
 }
 
-/* Show dropdown on hover */
-.secondary-menu > li:hover .dropdown-menu {
+/* Show dropdown on active class instead of hover */
+.secondary-menu > li.active .dropdown-menu {
     display: block;
+}
+
+/* Remove hover-based dropdown */
+.secondary-menu > li:hover .dropdown-menu {
+    display: none;
+}
+
+/* Add active state styles for menu items */
+.secondary-menu > li.active > a {
+    color: #666 !important;
+}
+
+.secondary-menu > li.active > a::after {
+    transform: rotate(180deg);
 }
 
 .dropdown-content {
