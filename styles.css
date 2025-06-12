@@ -24,7 +24,7 @@ body {
 .secondary-nav {
     background-color: #ededed;
     z-index: 1001;
-    padding: 0 3.25rem;
+    padding: 0 1.75rem;
     position: relative;
     height: 64px;
     display: flex;
@@ -355,11 +355,15 @@ body {
     }
 
     .secondary-nav {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
     }
 
     .breadcrumbs-container {
         padding: 0 1.5rem;
+    }
+
+    .secondary-menu a {
+        padding: 0 1rem;
     }
 }
 
