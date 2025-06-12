@@ -365,6 +365,8 @@ body {
     background-color: #f8f9fa;
     padding: 4rem 0;
     margin-bottom: 2rem;
+    width: 100%;
+    position: relative;
 }
 
 .hero-content {
@@ -374,10 +376,13 @@ body {
     display: flex;
     align-items: center;
     gap: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-text {
     flex: 1;
+    max-width: 600px;
 }
 
 .hero-text h1 {
@@ -385,6 +390,7 @@ body {
     color: #000;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    font-weight: bold;
 }
 
 .hero-text p {
@@ -403,6 +409,8 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .cta-button:hover {
@@ -411,6 +419,7 @@ body {
 
 .hero-image {
     flex: 1;
+    max-width: 600px;
 }
 
 .image-placeholder {
@@ -421,6 +430,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .image-placeholder span {
@@ -430,9 +440,18 @@ body {
 
 /* Responsive Design for Hero Section */
 @media (max-width: 768px) {
+    .hero {
+        padding: 2rem 0;
+    }
+
     .hero-content {
         flex-direction: column;
         gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .hero-text {
+        max-width: 100%;
     }
 
     .hero-text h1 {
@@ -441,6 +460,10 @@ body {
 
     .hero-text p {
         font-size: 1.1rem;
+    }
+
+    .hero-image {
+        max-width: 100%;
     }
 
     .image-placeholder {
