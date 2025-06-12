@@ -24,7 +24,7 @@ body {
 .secondary-nav {
     background-color: #444;
     z-index: 1001;
-    padding: 0.5rem 0;
+    padding: 0.5rem 2rem;
     position: relative;
 }
 
