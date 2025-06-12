@@ -581,4 +581,8 @@ body {
     .breadcrumb-item.active {
         padding: 0.2rem 0.4rem;
     }
+}
+
+.dropdown-menu ul li {
+    margin: 0.55rem 0;  /* Increased from 0.5rem by 10% */
 } 
