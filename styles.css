@@ -359,7 +359,7 @@ body {
     }
 
     .breadcrumbs-container {
-        padding: 0.5rem 1rem;
+        padding: 0.9375rem 1rem;
     }
 
     .secondary-menu a {
@@ -529,7 +529,7 @@ body {
 
 .breadcrumbs-container {
     background-color: #f8f9fa;
-    padding: 0.5rem 1.5rem;
+    padding: 0.9375rem 1.75rem;
     border-bottom: 1px solid #e9ecef;
 }
 
@@ -591,7 +591,7 @@ body {
     }
 
     .breadcrumbs-container {
-        padding: 0.5rem 1rem;
+        padding: 0.9375rem 1rem;
     }
 
     .breadcrumb-item {
