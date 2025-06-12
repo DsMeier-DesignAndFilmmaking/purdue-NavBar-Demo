@@ -140,18 +140,15 @@ body {
 /* Dropdown Menu Styles */
 .dropdown-menu {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 600px;
+    position: fixed;
+    top: 104px; /* Height of both navbars combined */
+    left: 0;
+    width: 100vw;
     background-color: #444;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     padding: 1rem 0;
     z-index: 1000;
-    border-radius: 4px;
-    width: 100vw;
-    max-width: 1200px;
+    border-radius: 0;
 }
 
 /* Show dropdown on hover */
