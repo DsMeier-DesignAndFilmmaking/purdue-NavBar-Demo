@@ -150,6 +150,8 @@ body {
     padding: 1rem 0;
     z-index: 1000;
     border-radius: 4px;
+    width: 100vw;
+    max-width: 1200px;
 }
 
 /* Show dropdown on hover */
