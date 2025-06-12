@@ -365,6 +365,10 @@ body {
     .secondary-menu a {
         padding: 0 1rem;
     }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
 }
 
 /* Content Container Styles */
@@ -397,10 +401,21 @@ body {
 /* Hero Section Styles */
 .hero {
     background-color: #f8f9fa;
-    padding: 4rem 0;
+    padding: 4rem 1.75rem;
+    text-align: left;
     margin-bottom: 2rem;
-    width: 100%;
-    position: relative;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
 }
 
 .hero-content {
@@ -475,7 +490,7 @@ body {
 /* Responsive Design for Hero Section */
 @media (max-width: 768px) {
     .hero {
-        padding: 2rem 0;
+        padding: 3rem 1rem;
     }
 
     .hero-content {
