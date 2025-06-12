@@ -491,4 +491,69 @@ body {
     .image-placeholder {
         height: 300px;
     }
+}
+
+/* Breadcrumbs Styles */
+.breadcrumbs {
+    background-color: #f8f9fa;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.breadcrumbs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.breadcrumb-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: '/';
+    margin: 0 0.5rem;
+    color: #dee2e6;
+}
+
+.breadcrumb-item a {
+    color: #0d6efd;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #0a58ca;
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+/* Responsive Breadcrumbs */
+@media (max-width: 768px) {
+    .breadcrumbs {
+        padding: 0.5rem 0;
+    }
+
+    .breadcrumbs-container {
+        padding: 0 1rem;
+    }
+
+    .breadcrumb-item {
+        font-size: 0.8125rem;
+    }
 } 
