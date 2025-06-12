@@ -192,7 +192,7 @@ body {
 }
 
 .dropdown-section h3 {
-    color: white;
+    color: #333;
     font-size: 1.1rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -209,14 +209,14 @@ body {
 }
 
 .dropdown-section ul li a {
-    color: #ddd !important;
+    color: #333 !important;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .dropdown-section ul li a:hover {
-    color: white !important;
+    color: #666 !important;
 }
 
 .hamburger {
