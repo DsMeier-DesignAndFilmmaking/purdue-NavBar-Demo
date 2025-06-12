@@ -563,7 +563,7 @@ body {
     color: #000000;
     text-decoration: none;
     transition: all 0.2s ease;
-    padding: 0 1.5rem;
+    padding: 0 1.75rem;
     height: 100%;
     display: flex;
     align-items: center;
@@ -577,7 +577,7 @@ body {
 .breadcrumb-item.active {
     color: #495057;
     font-weight: 500;
-    padding: 0 1.5rem;
+    padding: 0 1.75rem;
     background-color: #f8f9fa;
     height: 100%;
     display: flex;
