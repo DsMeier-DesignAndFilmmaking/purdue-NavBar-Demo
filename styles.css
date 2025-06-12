@@ -9,7 +9,7 @@ body {
 }
 
 .navbar {
-    padding: 1rem 2rem;
+    padding: 1.22rem 3.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +24,7 @@ body {
 .secondary-nav {
     background-color: #ededed;
     z-index: 1001;
-    padding: 0 2rem;
+    padding: 0 3.25rem;
     position: relative;
     height: 64px;
     display: flex;
@@ -264,7 +264,7 @@ body {
 /* Mobile Styles */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
     }
 
     .nav-menu {
@@ -352,6 +352,14 @@ body {
 
     .dropdown-section ul li {
         margin-bottom: 0.25rem;
+    }
+
+    .secondary-nav {
+        padding: 0 1.5rem;
+    }
+
+    .breadcrumbs-container {
+        padding: 0 1.5rem;
     }
 }
 
@@ -502,7 +510,7 @@ body {
 
 .breadcrumbs-container {
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 3.25rem;
 }
 
 .breadcrumb-list {
@@ -558,7 +566,7 @@ body {
     }
 
     .breadcrumbs-container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
     }
 
     .breadcrumb-item {
