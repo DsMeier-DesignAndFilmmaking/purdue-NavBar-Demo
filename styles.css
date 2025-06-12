@@ -160,23 +160,22 @@ body {
     border-radius: 0;
 }
 
-/* Show dropdown on active class instead of hover */
-.secondary-menu > li.active .dropdown-menu {
+/* Show dropdown on hover */
+.secondary-menu > li:hover .dropdown-menu {
     display: block;
 }
 
-/* Remove hover-based dropdown */
-.secondary-menu > li:hover .dropdown-menu {
+/* Remove active class styles */
+.secondary-menu > li.active .dropdown-menu {
     display: none;
 }
 
-/* Add active state styles for menu items */
 .secondary-menu > li.active > a {
-    color: #666 !important;
+    color: black !important;
 }
 
 .secondary-menu > li.active > a::after {
-    transform: rotate(180deg);
+    transform: none;
 }
 
 .dropdown-content {
