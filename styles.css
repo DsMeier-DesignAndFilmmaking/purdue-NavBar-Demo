@@ -582,11 +582,13 @@ body {
 }
 
 .breadcrumb-item {
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    position: relative;
+    padding: 0 1.58rem;
     font-size: 0.875rem;
-    color: #6c757d;
-    height: 100%;
+    color: #666;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .breadcrumb-item:not(:last-child)::after {
