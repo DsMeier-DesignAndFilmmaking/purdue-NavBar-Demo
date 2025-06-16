@@ -158,6 +158,7 @@ body {
     padding: 1rem 0;
     z-index: 1000;
     border-radius: 0;
+    transform: translateX(0);
 }
 
 /* Show dropdown on hover */
