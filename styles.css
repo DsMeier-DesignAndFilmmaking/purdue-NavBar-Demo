@@ -183,11 +183,12 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .dropdown-section {
     flex: 1;
+    min-width: 200px;
 }
 
 .dropdown-section h3 {
