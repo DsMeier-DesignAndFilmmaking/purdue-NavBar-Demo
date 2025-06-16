@@ -149,8 +149,8 @@ body {
 /* Dropdown Menu Styles */
 .dropdown-menu {
     display: none;
-    position: fixed;
-    top: 128px; /* Height of both navbars combined (64px + 64px) */
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100vw;
     background-color: #ededed;
@@ -604,7 +604,7 @@ body {
     color: #000000;
     text-decoration: none;
     transition: all 0.2s ease;
-    padding: 0 1.71rem;
+    padding: 0 1.58rem;
     height: 100%;
     display: flex;
     align-items: center;
