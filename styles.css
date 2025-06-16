@@ -151,14 +151,14 @@ body {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100vw;
     background-color: #ededed;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     padding: 1rem 0;
     z-index: 1000;
     border-radius: 0;
-    transform: translateX(0);
 }
 
 /* Show dropdown on hover */
@@ -185,6 +185,7 @@ body {
     padding: 0 2rem;
     display: flex;
     gap: 2rem;
+    justify-content: center;
 }
 
 .dropdown-section {
