@@ -413,8 +413,8 @@ body {
 
 /* Content Container Styles */
 .content-container {
-    padding: 4rem 2rem;
-    background-color: #f8f8f8;
+    padding: 4rem 3rem;
+    background-color: #fff;
 }
 
 .content-container:nth-child(even) {
@@ -461,11 +461,11 @@ body {
 .hero-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 3rem;
     display: flex;
     align-items: center;
-    gap: 4rem;
-    position: relative;
-    z-index: 1;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 .hero-text {
@@ -489,20 +489,21 @@ body {
 }
 
 .cta-button {
-    background-color: #c28e0e;
+    background-color: black;
     color: white;
     border: none;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: inline-block;
     text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
 }
 
 .cta-button:hover {
-    background-color: #a77a0b;
+    background-color: #333;
 }
 
 .hero-image {
