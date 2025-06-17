@@ -5,7 +5,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
 .navbar {
@@ -19,13 +20,19 @@ body {
 .global-nav {
     background-color: white;
     z-index: 1002;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 1.22rem 3.25rem;
+    min-height: 3.25rem;
+    height: 92px;
 }
 
 .secondary-nav {
+    position: relative;
     background-color: #ededed;
     z-index: 1001;
     padding: 0 1.75rem;
-    position: relative;
     height: 64px;
     display: flex;
     align-items: center;
@@ -35,13 +42,50 @@ body {
     width: 100%;
     position: relative;
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.5rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 100%;
+}
+
+.logo {
+    position: relative;
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #555960;
 }
 
 .logo a {
     color: black;
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    height: 100%;
+}
+
+.logo a img {
+    height: 36px;
+    width: auto;
+    display: block;
 }
 
 .nav-menu {
@@ -82,11 +126,10 @@ body {
     list-style: none;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    gap: 0;
     margin: 0;
     padding: 0;
     height: 100%;
+    gap: 0;
 }
 
 .secondary-menu li {
@@ -103,13 +146,14 @@ body {
     color: black !important;
     text-decoration: none;
     font-size: 1rem;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 0.25rem 1.5rem;
     transition: color 0.3s ease;
     white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     height: 100%;
+    font-weight: 600;
 }
 
 /* Dropdown Arrow Styles */
@@ -147,64 +191,94 @@ body {
 }
 
 /* Dropdown Menu Styles */
-.dropdown-menu {
-    display: none;
+.dropdowns-container {
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    background-color: #ededed;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    padding: 1rem 0;
+    top: 120px; /* Combined height of primary (56px) and secondary (64px) navbars */
+    left: 0;
+    width: 100%;
+    pointer-events: none;
     z-index: 1000;
-    border-radius: 0;
 }
 
-/* Show dropdown on hover */
-.secondary-menu > li:hover .dropdown-menu {
+.dropdown-menu {
+    display: none;
+    width: 100%;
+    background-color: #ededed;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 2rem 0;
+    pointer-events: auto;
+}
+
+.dropdown-menu.active {
     display: block;
 }
 
-/* Remove active class styles */
-.secondary-menu > li.active .dropdown-menu {
-    display: none;
-}
-
-.secondary-menu > li.active > a {
-    color: black !important;
-}
-
-.secondary-menu > li.active > a::after {
-    transform: none;
-}
-
 .dropdown-content {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    justify-content: center;
+}
+
+.dropdown-content:first-of-type {
+    grid-template-columns: 300px repeat(4, 1fr);
+}
+
+.dropdown-image-container {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dropdown-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .dropdown-section {
-    flex: 1;
-    min-width: 200px;
+    min-width: 0;
+}
+
+.dropdown-section:first-child {
+    padding-left: 0;
 }
 
 .dropdown-section h3 {
-    color: #333;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    text-align: left;
-    background-color: #cfb991;
-    padding: 0.5rem 1.1rem;
-    border-radius: 4px;
-    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
-    position: relative;
-    z-index: 1;
+    color: #333 !important;
+    font-size: 1.125rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    background-color: #cfb991 !important;
+    border-radius: 4px !important;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%) !important;
+    position: relative !important;
+    z-index: 1 !important;
+    text-transform: uppercase !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 2.5rem !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.dropdown-section h3 span {
+    padding: 4px 1.1rem 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    letter-spacing: 0 !important;
+    box-sizing: border-box !important;
+    font-weight: 400 !important;
 }
 
 .dropdown-section ul {
@@ -215,23 +289,25 @@ body {
 }
 
 .dropdown-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     text-align: left;
-    padding-left: 1rem;
 }
 
 .dropdown-section ul li a {
-    color: #333 !important;
+    color: #333;
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.3s ease;
-    text-align: left;
     display: block;
     padding: 0.25rem 0;
+    transition: color 0.3s ease;
+    text-align: left;
+    font-weight: 400;
 }
 
 .dropdown-section ul li a:hover {
-    color: #666 !important;
+    color: #b8a37d;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .hamburger {
@@ -362,8 +438,8 @@ body {
     }
 
     .dropdown-section h3 {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .dropdown-section ul li {
@@ -415,7 +491,7 @@ body {
 
 /* Content Container Styles */
 .content-container {
-    padding: 4rem 3rem;
+    padding: 4rem 0;
     background-color: #fff;
 }
 
@@ -426,6 +502,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 3rem;
 }
 
 .container h2 {
@@ -493,19 +570,34 @@ body {
 .cta-button {
     background-color: black;
     color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
     text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid #cfb991;
+}
+
+.cta-button::after {
+    content: '→';
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+    position: relative;
+    top: -1px;
     display: inline-block;
-    margin-top: 1rem;
+}
+
+.cta-button:hover::after {
+    transform: translateX(4px);
 }
 
 .cta-button:hover {
-    background-color: #333;
+    background-color: #cfb991;
+    color: black;
 }
 
 .hero-image {
@@ -564,14 +656,14 @@ body {
 
 /* Breadcrumbs Styles */
 .breadcrumbs {
-    background-color: white;
-    border-bottom: 1px solid #e9ecef;
+    background-color: #f8f9fa;
+    padding: .9375rem 0;
+    border-bottom: 1px solid #dee2e6;
 }
 
 .breadcrumbs-container {
-    background-color: #f8f9fa;
-    padding: 0.9375rem 1.75rem;
-    border-bottom: 1px solid #e9ecef;
+    margin: 0 auto;
+    padding: 0 1.75rem;
 }
 
 .breadcrumb-list {
@@ -581,6 +673,7 @@ body {
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
+    height: 100%;
 }
 
 .breadcrumb-item {
@@ -590,6 +683,7 @@ body {
     color: #666;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 .breadcrumb-item:not(:last-child)::after {
@@ -608,6 +702,8 @@ body {
     display: inline-flex;
     align-items: center;
     transition: color 0.3s ease;
+    padding: 0 1.5rem;
+    height: 100%;
 }
 
 .breadcrumb-item a:hover {
@@ -617,6 +713,10 @@ body {
 .breadcrumb-item.active {
     color: #333;
     font-weight: 500;
+    padding: 0 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 /* Responsive Breadcrumbs */
@@ -650,4 +750,92 @@ body {
 
 .breadcrumbs a:hover {
     text-decoration: underline;
+}
+
+.apply-button {
+    background-color: #cfb991;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-family: acumin-pro, Franklin Gothic, sans-serif;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: normal;
+    margin: 0;
+    width: auto;
+    height: auto;
+    position: static;
+    transform: none;
+    box-shadow: none;
+}
+
+.apply-button:hover {
+    background-color: #b8a57a;
+    color: #000;
+    text-decoration: none;
+}
+
+.secondary-menu li[data-dropdown].active > a,
+.secondary-menu li[data-dropdown]:hover > a {
+    text-decoration: underline;
+    text-decoration-color: #8e6f3e;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    animation: underlineAppear 0.3s ease forwards;
+}
+
+@keyframes underlineAppear {
+    from {
+        text-decoration-thickness: 0;
+    }
+    to {
+        text-decoration-thickness: 2px;
+    }
+}
+
+.secondary-menu li[data-dropdown].active > a::after,
+.secondary-menu li[data-dropdown]:hover > a::after {
+    border-top-color: #8e6f3e;
+}
+
+.global-nav .nav-text {
+    align-items: center;
+    display: flex;
+    font-family: acumin-pro-condensed, Franklin Gothic, sans-serif;
+    font-size: 1.5625rem;
+    font-style: normal;
+    font-weight: normal !important;
+    letter-spacing: -.03125rem;
+    line-height: 1;
+    max-width: 25rem;
+    padding-bottom: .2rem;
+    padding-left: 1.25rem;
+    color: #555960;
+    height: 100%;
+    margin: 0;
+}
+
+.navbar.global-nav .logo-container .nav-text {
+    align-items: center;
+    display: flex;
+    font-family: "Acumin Pro", Franklin Gothic, sans-serif;
+    font-size: 1.5625rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -.03125rem;
+    line-height: 1;
+    max-width: none;
+    white-space: nowrap;
+    padding: 0;
+    padding-left: 1.25rem;
+    color: #000000;
+    height: 100%;
+    margin: 0;
 } 

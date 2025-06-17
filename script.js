@@ -63,4 +63,39 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    const menuItems = document.querySelectorAll('.secondary-menu > li[data-dropdown]');
+    const dropdowns = document.querySelectorAll('.dropdown-menu');
+    const overlay = document.querySelector('.menu-overlay');
+
+    menuItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const dropdownId = item.getAttribute('data-dropdown') + '-dropdown';
+            const dropdown = document.getElementById(dropdownId);
+            
+            // Hide all dropdowns
+            dropdowns.forEach(d => d.classList.remove('active'));
+            
+            // Show the current dropdown
+            if (dropdown) {
+                dropdown.classList.add('active');
+            }
+        });
+    });
+
+    // Add mouseenter/mouseleave to dropdowns
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+            dropdown.classList.add('active');
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            dropdown.classList.remove('active');
+        });
+    });
+
+    // Hide dropdowns when mouse leaves the menu
+    document.querySelector('.secondary-nav').addEventListener('mouseleave', () => {
+        dropdowns.forEach(d => d.classList.remove('active'));
+    });
 }); 
