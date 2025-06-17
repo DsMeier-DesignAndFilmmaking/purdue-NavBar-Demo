@@ -1,0 +1,24 @@
+{
+  "name": "navbar-demo",
+  "version": "1.0.0",
+  "description": "A simple, responsive navigation bar with a hamburger menu for mobile devices.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DsMeier-DesignAndFilmmaking/purdue-NavBar-Demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DsMeier-DesignAndFilmmaking/purdue-NavBar-Demo/issues"
+  },
+  "homepage": "https://github.com/DsMeier-DesignAndFilmmaking/purdue-NavBar-Demo#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

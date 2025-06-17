@@ -98,4 +98,22 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.secondary-nav').addEventListener('mouseleave', () => {
         dropdowns.forEach(d => d.classList.remove('active'));
     });
+
+    // Sticky sub-navbar scroll functionality
+    const stickySubNav = document.querySelector('.sticky-sub-nav');
+    const scrollThreshold = 400;
+
+    function handleScroll() {
+        if (window.scrollY > scrollThreshold) {
+            stickySubNav.classList.add('visible');
+        } else {
+            stickySubNav.classList.remove('visible');
+        }
+    }
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
 }); 
