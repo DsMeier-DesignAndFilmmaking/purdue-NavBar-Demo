@@ -11,4 +11,10 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
-*.swo 
+*.swo
+
+# Node.js modules
+node_modules/
+
+# Log files
+*.log 
